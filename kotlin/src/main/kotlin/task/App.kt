@@ -67,7 +67,7 @@ object Example : Automaton {
         while(j < 123){ //Črke
             setTransition(1, j.toChar(), 5)
             setTransition(5, j.toChar(), 5)
-            setTransition(17, j.toChar(), 5)
+            setTransition(18,j.toChar(),5)
             j++
         }
         setTransition(1, '+', 7) //Plus
