@@ -143,7 +143,7 @@ object Example : Automaton {
         setValue(22,11) //WRITE
         setValue(24,12) //do
         setValue(26,13) //done
-        setValue(19,14) //for
+        setValue(29,14) //for
         setValue(30,15) //;
         setValue(32,16) //to
     }
