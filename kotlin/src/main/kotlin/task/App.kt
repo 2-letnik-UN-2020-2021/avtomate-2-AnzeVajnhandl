@@ -67,6 +67,7 @@ object Example : Automaton {
         while(j < 123){ //Črke
             setTransition(1, j.toChar(), 5)
             setTransition(5, j.toChar(), 5)
+            setTransition(17, j.toChar(), 5)
             j++
         }
         setTransition(1, '+', 7) //Plus
@@ -88,9 +89,8 @@ object Example : Automaton {
         setTransition(1,'f',27) //f-or
         setTransition(1,'t',31) //t-o
 
-        for (n in 65..122){
+        for (n in 65..90){
             for(m in 17..22){
-                if(n <= 90 || n >= 97 ) {
 
                     if (m == 18 && n == 'R'.code) {
                         setTransition(m, n.toChar(), 19) //R
@@ -103,12 +103,11 @@ object Example : Automaton {
                     } else {
                         setTransition(m, n.toChar(), 5)
                     }
-                }
             }
         }
-        for (n in 65..122){
+        for (n in 97..122){
             for(m in 23..32) {
-                if(n <= 90 || n >= 97 ) {
+
                     if (m == 23 && n == 'o'.code) {
                         setTransition(m, n.toChar(), 24) //o
                     } else if (m == 24 && n == 'n'.code) {
@@ -124,9 +123,9 @@ object Example : Automaton {
                     } else {
                         setTransition(m, n.toChar(), 5)
                     }
-                }
             }
         }
+
         setValue(2,1) //Float
         setValue(4,1) //Float
         setValue(5,2) //Variable
