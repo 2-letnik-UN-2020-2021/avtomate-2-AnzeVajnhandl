@@ -90,40 +90,40 @@ object Example : Automaton {
 
         for (n in 65..122){
             for(m in 17..22){
-                if(m == 18 && n == 'R'.code){
-                    setTransition(m,n.toChar(),19) //R
-                }
-                else if(m == 19 && n == 'I'.code){
-                    setTransition(m,n.toChar(),20) //I
-                }
-                else if(m == 20 && n == 'T'.code){
-                    setTransition(m,n.toChar(),21) //T
-                }
-                else if(m == 21 && n == 'E'.code){
-                    setTransition(m,n.toChar(),22) //E
-                }
-                else{
-                    setTransition(m,n.toChar(),5)
+                if(n <= 90 || n >= 97 ) {
+
+                    if (m == 18 && n == 'R'.code) {
+                        setTransition(m, n.toChar(), 19) //R
+                    } else if (m == 19 && n == 'I'.code) {
+                        setTransition(m, n.toChar(), 20) //I
+                    } else if (m == 20 && n == 'T'.code) {
+                        setTransition(m, n.toChar(), 21) //T
+                    } else if (m == 21 && n == 'E'.code) {
+                        setTransition(m, n.toChar(), 22) //E
+                    } else {
+                        setTransition(m, n.toChar(), 5)
+                    }
                 }
             }
         }
-        for (n in 97..122){
+        for (n in 65..122){
             for(m in 23..32) {
-                if (m == 23 && n == 'o'.code) {
-                    setTransition(m, n.toChar(), 24) //o
-                } else if (m == 24 && n == 'n'.code) {
-                    setTransition(m, n.toChar(), 25) //n
-                } else if (m == 25 && n == 'e'.code) {
-                    setTransition(m, n.toChar(), 26) //e
-                } else if (m == 27 && n == 'o'.code) {
-                    setTransition(m, n.toChar(), 28) //o
-                } else if (m == 28 && n == 'r'.code) {
-                    setTransition(m, n.toChar(), 29) //r
-                } else if (m == 31 && n == 'o'.code) {
-                    setTransition(m, n.toChar(), 32) //o
-                }
-                else{
-                    setTransition(m,n.toChar(),5)
+                if(n <= 90 || n >= 97 ) {
+                    if (m == 23 && n == 'o'.code) {
+                        setTransition(m, n.toChar(), 24) //o
+                    } else if (m == 24 && n == 'n'.code) {
+                        setTransition(m, n.toChar(), 25) //n
+                    } else if (m == 25 && n == 'e'.code) {
+                        setTransition(m, n.toChar(), 26) //e
+                    } else if (m == 27 && n == 'o'.code) {
+                        setTransition(m, n.toChar(), 28) //o
+                    } else if (m == 28 && n == 'r'.code) {
+                        setTransition(m, n.toChar(), 29) //r
+                    } else if (m == 31 && n == 'o'.code) {
+                        setTransition(m, n.toChar(), 32) //o
+                    } else {
+                        setTransition(m, n.toChar(), 5)
+                    }
                 }
             }
         }
