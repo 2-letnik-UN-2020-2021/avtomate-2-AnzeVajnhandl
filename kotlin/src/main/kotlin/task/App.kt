@@ -89,7 +89,7 @@ object Example : Automaton {
         setTransition(1,'t',31) //t-o
 
         for (n in 65..90){
-            for(m in 17..22){
+            for(m in 18..22){
                 if(m==18&&n=='R'.code){
                     setTransition(m,n.toChar(),19) //R
                 }
@@ -108,7 +108,7 @@ object Example : Automaton {
             }
         }
         for (n in 97..122){
-            for(m in 22..32) {
+            for(m in 23..32) {
                 if (m == 23 && n == 'o'.code) {
                     setTransition(m, n.toChar(), 24) //o
                 } else if (m == 24 && n == 'n'.code) {
