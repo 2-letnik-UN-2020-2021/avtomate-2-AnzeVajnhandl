@@ -81,15 +81,15 @@ object Example : Automaton {
         setTransition(1, k.toChar(),15) //Nova vrsta
         setTransition(1,':',16) //Dvopičje
         setTransition(16,'=',17) //Je enako
+        setTransition(1,';',30) //;
         //
         setTransition(1,'W',18) //W-RITE
         setTransition(1,'d',23) //d-one
         setTransition(1,'f',27) //f-or
-        setTransition(1,';',30) //;
         setTransition(1,'t',31) //t-o
 
-        for (n in 65..122){
-            for(m in 17..32){
+        for (n in 65..90){
+            for(m in 17..22){
                 if(m==18&&n=='R'.code){
                     setTransition(m,n.toChar(),19) //R
                 }
@@ -102,30 +102,31 @@ object Example : Automaton {
                 else if(m==21&&n=='E'.code){
                     setTransition(m,n.toChar(),22) //E
                 }
-                if(m==23&&n=='o'.code){
-                    setTransition(m,n.toChar(),24) //o
+                else{
+                    setTransition(m,n.toChar(),5)
                 }
-                else if(m==24&&n=='n'.code){
-                    setTransition(m,n.toChar(),25) //n
-                }
-                else if(m==25&&n=='e'.code){
-                    setTransition(m,n.toChar(),26) //e
-                }
-                else if(m==27&&n=='o'.code){
-                    setTransition(m,n.toChar(),28) //o
-                }
-                else if(m==28&&n=='r'.code){
-                    setTransition(m,n.toChar(),29) //r
-                }
-                else if(m==31&&n=='o'.code){
-                    setTransition(m,n.toChar(),32) //o
+            }
+        }
+        for (n in 97..122){
+            for(m in 22..32) {
+                if (m == 23 && n == 'o'.code) {
+                    setTransition(m, n.toChar(), 24) //o
+                } else if (m == 24 && n == 'n'.code) {
+                    setTransition(m, n.toChar(), 25) //n
+                } else if (m == 25 && n == 'e'.code) {
+                    setTransition(m, n.toChar(), 26) //e
+                } else if (m == 27 && n == 'o'.code) {
+                    setTransition(m, n.toChar(), 28) //o
+                } else if (m == 28 && n == 'r'.code) {
+                    setTransition(m, n.toChar(), 29) //r
+                } else if (m == 31 && n == 'o'.code) {
+                    setTransition(m, n.toChar(), 32) //o
                 }
                 else{
                     setTransition(m,n.toChar(),5)
                 }
             }
         }
-
         setValue(2,1) //Float
         setValue(4,1) //Float
         setValue(5,2) //Variable
