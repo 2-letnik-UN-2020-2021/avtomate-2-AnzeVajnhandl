@@ -53,7 +53,7 @@ object Example : Automaton {
     init {
         var i = 48
         var j = 65
-        var n = 10
+        var k = 10
         while(i < 58){ //Števila
             setTransition(1, i.toChar(), 2)
             setTransition(2, i.toChar(), 2)
@@ -77,25 +77,53 @@ object Example : Automaton {
         setTransition(1, '(', 12) //Oklepaj
         setTransition(1, ')', 13) //Zaklepaj
         setTransition(1,' ',14) //Presledek
-        setTransition(1, n.toChar(),15) //Nova vrsta
+        setTransition(1, k.toChar(),15) //Nova vrsta
         setTransition(1,':',16) //Dvopičje
         setTransition(16,'=',17) //Je enako
-        setTransition(1,'W',18) //W
-        setTransition(18,'R',19) //R
-        setTransition(19,'I',20) //I
-        setTransition(20,'T',21) //T
-        setTransition(21,'E',22) //E
-        setTransition(1,'d',23) //d
-        setTransition(23,'o',24) //o
-        setTransition(24,'n',25) //o
-        setTransition(25,'e',26) //o
-        setTransition(1,'f',27) //f
-        setTransition(27,'o',28) //o
-        setTransition(28,'r',29) //r
+        //
+        setTransition(1,'W',18) //W-RITE
+        setTransition(1,'d',23) //d-one
+        setTransition(1,'f',27) //f-or
         setTransition(1,';',30) //;
-        setTransition(1,'t',31) //t
-        setTransition(31,'o',32) //o
+        setTransition(1,'t',31) //t-o
 
+        for (n in 65..122){
+            for(m in 7..32){
+                if(m==18&&n=='R'.code){
+                    setTransition(m,n.toChar(),19) //R
+                }
+                else if(m==19&&n=='I'.code){
+                    setTransition(m,n.toChar(),20) //I
+                }
+                else if(m==20&&n=='T'.code){
+                    setTransition(m,n.toChar(),21) //T
+                }
+                else if(m==21&&n=='E'.code){
+                    setTransition(m,n.toChar(),22) //E
+                }
+                if(m==23&&n=='o'.code){
+                    setTransition(m,n.toChar(),24) //o
+                }
+                else if(m==24&&n=='n'.code){
+                    setTransition(m,n.toChar(),25) //n
+                }
+                else if(m==25&&n=='e'.code){
+                    setTransition(m,n.toChar(),26) //e
+                }
+                else if(m==27&&n=='o'.code){
+                    setTransition(m,n.toChar(),28) //o
+                }
+                else if(m==28&&n=='r'.code){
+                    setTransition(m,n.toChar(),29) //r
+                }
+                else if(m==31&&n=='o'.code){
+                    setTransition(m,n.toChar(),32) //o
+                }
+                else{
+                    setTransition(m,n.toChar(),5)
+                }
+            }
+        }
 
         setValue(2,1) //Float
         setValue(4,1) //Float
@@ -174,7 +202,6 @@ class Scanner(private val automaton: Automaton, private val stream: InputStream)
             Token(value, String(buffer.toByteArray()), startRow, startColumn)
     }
 }
-
 fun name(value: Int) =
     when (value) {
         1 -> "float"
