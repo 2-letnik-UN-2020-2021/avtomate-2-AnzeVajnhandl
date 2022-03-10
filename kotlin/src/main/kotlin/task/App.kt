@@ -19,10 +19,10 @@ interface Automaton {
 }
 
 object Example : Automaton {
-    override val states = setOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)
+    override val states = setOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,32)
     override val alphabet = 0 .. 255
     override val startState = 1
-    override val finalStates = setOf(2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)
+    override val finalStates = setOf(2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32)
 
     private val numberOfStates = states.maxOrNull()!! + 1
     private val numberOfSymbols = alphabet.maxOrNull()!! + 1
@@ -93,6 +93,9 @@ object Example : Automaton {
         setTransition(27,'o',28) //o
         setTransition(28,'r',29) //r
         setTransition(1,';',30) //;
+        setTransition(1,'t',31) //t
+        setTransition(31,'o',32) //o
+
 
         setValue(2,1) //Float
         setValue(4,1) //Float
@@ -111,6 +114,8 @@ object Example : Automaton {
         setValue(26,13) //done
         setValue(19,14) //for
         setValue(30,15) //;
+        setValue(32,16) //to
+
     }
 }
 
@@ -187,6 +192,7 @@ fun name(value: Int) =
         13 -> "done"
         14 -> "for"
         15 -> "semi"
+        16 -> "to"
         else -> throw Error("Invalid value")
     }
 
