@@ -89,7 +89,7 @@ object Example : Automaton {
         setTransition(1,'t',31) //t-o
 
         for (n in 65..122){
-            for(m in 7..32){
+            for(m in 17..32){
                 if(m==18&&n=='R'.code){
                     setTransition(m,n.toChar(),19) //R
                 }
@@ -137,7 +137,7 @@ object Example : Automaton {
         setValue(11,7) //Power
         setValue(12,8) //Lparen
         setValue(13,9) //Rparen
-        setValue(14,0) //Presledek
+        //setValue(14,0) //Presledek
         setValue(17,10) //:=
         setValue(22,11) //WRITE
         setValue(24,12) //do
