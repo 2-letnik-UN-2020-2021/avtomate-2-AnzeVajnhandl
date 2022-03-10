@@ -78,8 +78,8 @@ object Example : Automaton {
         setTransition(1, ')', 13) //Zaklepaj
         setTransition(1,' ',14) //Presledek
         setTransition(1, n.toChar(),15) //Nova vrsta
-        setTransition(1,':'16) //Dvopičje
-        setTransition(16,'='17) //Je enako
+        setTransition(1,':',16) //Dvopičje
+        setTransition(16,'=',17) //Je enako
         setTransition(1,'W',18) //W
         setTransition(18,'R',19) //R
         setTransition(19,'I',20) //I
