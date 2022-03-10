@@ -77,6 +77,7 @@ object Example : Automaton {
         setTransition(1, '(', 12) //Oklepaj
         setTransition(1, ')', 13) //Zaklepaj
         setTransition(1,' ',14) //Presledek
+        setTransition(14,' ',14) //Presledek
         setTransition(1, k.toChar(),15) //Nova vrsta
         setTransition(1,':',16) //Dvopičje
         setTransition(16,'=',17) //Je enako
@@ -136,6 +137,7 @@ object Example : Automaton {
         setValue(11,7) //Power
         setValue(12,8) //Lparen
         setValue(13,9) //Rparen
+        setValue(14,0) //Presledek
         setValue(17,10) //:=
         setValue(22,11) //WRITE
         setValue(24,12) //do
@@ -143,7 +145,6 @@ object Example : Automaton {
         setValue(19,14) //for
         setValue(30,15) //;
         setValue(32,16) //to
-
     }
 }
 
